@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bearing Capacity Calculator</title>
+</head>
+<body>
+    <h1>Bearing Capacity Calculator</h1>
+    <form>
+        <label>Cohesion (c') [kPa]: <input type="number" id="cohesion" required></label><br>
+        <label>Overburden Pressure (q) [kPa]: <input type="number" id="q" required></label><br>
+        <label>Soil Unit Weight (γ) [kN/m³]: <input type="number" id="gamma" required></label><br>
+        <label>Foundation Width (B) [m]: <input type="number" id="width" required></label><br>
+        <label>Nc: <input type="number" id="Nc" value="5.14" required></label><br>
+        <label>Nq: <input type="number" id="Nq" value="1.0" required></label><br>
+        <label>Nγ: <input type="number" id="Ngamma" value="0.6" required></label><br>
+        <button type="button" onclick="calculateBearingCapacity()">Calculate</button>
+    </form>
+    <p id="result"></p>
+
+    <script>
+        function calculateBearingCapacity() {
+            const c = parseFloat(document.getElementById('cohesion').value);
+            const q = parseFloat(document.getElementById('q').value);
+            const gamma = parseFloat(document.getElementById('gamma').value);
+            const B = parseFloat(document.getElementById('width').value);
+            const Nc = parseFloat(document.getElementById('Nc').value);
+            const Nq = parseFloat(document.getElementById('Nq').value);
+            const Ngamma = parseFloat(document.getElementById('Ngamma').value);
+
+            const qu = (c * Nc) + (q * Nq) + (0.5 * gamma * B * Ngamma);
+            document.getElementById('result').innerText = `Ultimate Bearing Capacity: ${qu.toFixed(2)} kPa`;
+        }
+    </script>
+</body>
+</html>

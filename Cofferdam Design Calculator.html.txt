@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cofferdam Design Calculator</title>
+</head>
+<body>
+    <h1>Cofferdam Design Calculator</h1>
+    <form>
+        <label>Water Height (h) [m]: <input type="number" id="height" required></label><br>
+        <button type="button" onclick="calculateCofferdam()">Calculate</button>
+    </form>
+    <p id="result"></p>
+
+    <script>
+        function calculateCofferdam() {
+            const h = parseFloat(document.getElementById('height').value);
+            const gamma_w = 9.81; // kN/m³
+            const Pw = gamma_w * h;
+
+            document.getElementById('result').innerText = 
+                `Water Pressure: ${Pw.toFixed(2)} kPa`;
+        }
+    </script>
+</body>
+</html>

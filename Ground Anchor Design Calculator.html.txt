@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ground Anchor Design Calculator</title>
+</head>
+<body>
+    <h1>Ground Anchor Design Calculator</h1>
+    <form>
+        <label>Structural Load (W) [kN]: <input type="number" id="W" required></label><br>
+        <label>Uplift Pressure (U) [kN]: <input type="number" id="U" required></label><br>
+        <button type="button" onclick="calculateAnchorForce()">Calculate</button>
+    </form>
+    <p id="result"></p>
+
+    <script>
+        function calculateAnchorForce() {
+            const W = parseFloat(document.getElementById('W').value);
+            const U = parseFloat(document.getElementById('U').value);
+
+            const Fa = W + U;
+            document.getElementById('result').innerText = 
+                `Required Anchor Force: ${Fa.toFixed(2)} kN`;
+        }
+    </script>
+</body>
+</html>

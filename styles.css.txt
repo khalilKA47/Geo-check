@@ -1,0 +1,44 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  text-align: center;
+}
+
+header {
+  background-color: #2a9d8f;
+  color: white;
+  padding: 20px;
+}
+
+.icons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.icon-card {
+  margin: 15px;
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 150px;
+  transition: transform 0.2s;
+}
+
+.icon-card:hover {
+  transform: scale(1.05);
+}
+
+.icon-card a {
+  text-decoration: none;
+  color: #333;
+}
+
+.icon-card i {
+  font-size: 50px;
+  color: #264653;
+}

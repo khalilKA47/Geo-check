@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pile Length Calculator</title>
+</head>
+<body>
+    <h1>Pile Length Calculator</h1>
+    <form>
+        <label>Design Load (Q) [kN]: <input type="number" id="Q" required></label><br>
+        <label>Shaft Resistance (fs) [kPa]: <input type="number" id="fs" required></label><br>
+        <label>Base Resistance (Qb) [kN]: <input type="number" id="Qb" required></label><br>
+        <button type="button" onclick="calculatePileLength()">Calculate</button>
+    </form>
+    <p id="result"></p>
+
+    <script>
+        function calculatePileLength() {
+            const Q = parseFloat(document.getElementById('Q').value);
+            const fs = parseFloat(document.getElementById('fs').value);
+            const Qb = parseFloat(document.getElementById('Qb').value);
+
+            const A = (Q - Qb) / fs;
+            document.getElementById('result').innerText = `Required Pile Area: ${A.toFixed(2)} m²`;
+        }
+    </script>
+</body>
+</html>

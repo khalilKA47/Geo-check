@@ -1,0 +1,57 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Geotechnical Calculations</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <header>
+    <h1>Geotechnical Calculations</h1>
+    <p>Select a tool to begin your analysis.</p>
+  </header>
+
+  <section class="icons">
+    <div class="icon-card">
+      <a href="bearing-capacity.html">
+        <i class="fas fa-mountain"></i>
+        <p>Bearing Capacity</p>
+      </a>
+    </div>
+    <div class="icon-card">
+      <a href="slope-stability.html">
+        <i class="fas fa-chart-area"></i>
+        <p>Slope Stability</p>
+      </a>
+    </div>
+    <div class="icon-card">
+      <a href="pile-length.html">
+        <i class="fas fa-anchor"></i>
+        <p>Pile Length</p>
+      </a>
+    </div>
+    <div class="icon-card">
+      <a href="retaining-wall.html">
+        <i class="fas fa-university"></i>
+        <p>Retaining Wall</p>
+      </a>
+    </div>
+    <div class="icon-card">
+      <a href="cofferdam-design.html">
+        <i class="fas fa-water"></i>
+        <p>Cofferdam Design</p>
+      </a>
+    </div>
+    <div class="icon-card">
+      <a href="ground-anchors.html">
+        <i class="fas fa-drafting-compass"></i>
+        <p>Ground Anchors</p>
+      </a>
+    </div>
+  </section>
+</body>
+
+</html>

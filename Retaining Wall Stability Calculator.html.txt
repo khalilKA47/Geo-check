@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retaining Wall Stability Calculator</title>
+</head>
+<body>
+    <h1>Retaining Wall Stability Calculator</h1>
+    <form>
+        <label>Resisting Horizontal Force (R<sub>h</sub>) [kN]: <input type="number" id="Rh" required></label><br>
+        <label>Applied Horizontal Force (F<sub>h</sub>) [kN]: <input type="number" id="Fh" required></label><br>
+        <label>Resisting Moment (R<sub>m</sub>) [kN·m]: <input type="number" id="Rm" required></label><br>
+        <label>Overturning Moment (F<sub>m</sub>) [kN·m]: <input type="number" id="Fm" required></label><br>
+        <button type="button" onclick="calculateRetainingWall()">Calculate</button>
+    </form>
+    <p id="result"></p>
+
+    <script>
+        function calculateRetainingWall() {
+            const Rh = parseFloat(document.getElementById('Rh').value);
+            const Fh = parseFloat(document.getElementById('Fh').value);
+            const Rm = parseFloat(document.getElementById('Rm').value);
+            const Fm = parseFloat(document.getElementById('Fm').value);
+
+            const FoS_sliding = Rh / Fh;
+            const FoS_overturning = Rm / Fm;
+
+            document.getElementById('result').innerText = 
+                `FoS (Sliding): ${FoS_sliding.toFixed(2)}, FoS (Overturning): ${FoS_overturning.toFixed(2)}`;
+        }
+    </script>
+</body>
+</html>

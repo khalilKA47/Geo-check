@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slope Stability Calculator</title>
+</head>
+<body>
+    <h1>Slope Stability Calculator</h1>
+    <form>
+        <label>Cohesion (c) [kPa]: <input type="number" id="cohesion" required></label><br>
+        <label>Soil Unit Weight (γ) [kN/m³]: <input type="number" id="gamma" required></label><br>
+        <label>Slope Height (h) [m]: <input type="number" id="height" required></label><br>
+        <label>Slope Angle (θ) [degrees]: <input type="number" id="theta" required></label><br>
+        <button type="button" onclick="calculateSlopeStability()">Calculate</button>
+    </form>
+    <p id="result"></p>
+
+    <script>
+        function calculateSlopeStability() {
+            const c = parseFloat(document.getElementById('cohesion').value);
+            const gamma = parseFloat(document.getElementById('gamma').value);
+            const h = parseFloat(document.getElementById('height').value);
+            const theta = parseFloat(document.getElementById('theta').value) * (Math.PI / 180);
+
+            const numerator = c + (gamma * h * Math.cos(theta) ** 2);
+            const denominator = gamma * h * Math.sin(theta) * Math.cos(theta);
+            const FoS = numerator / denominator;
+
+            document.getElementById('result').innerText = `Factor of Safety: ${FoS.toFixed(2)}`;
+        }
+    </script>
+</body>
+</html>
